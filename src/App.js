@@ -14,23 +14,21 @@ class App extends Component {
   }
 
     render() {
-      console.log("here");
-      if(this.props.MainStore.isPageChange()){
-        if(this.props.MainStore.getPageOneStore().getPageOneIsActive()){
-          return(
-            <PageOne/>
-          );
-        }
-        else if(this.props.MainStore.getPageTwoStore().getPageTwoIsActive()){
-          return(
-            <PageTwo/>
-          );
-        }
-        else if(this.props.MainStore.getPageThreeStore().getPageThreeIsActive()){
-          return(
-            <PageThree/>
-          );
-        }
+      console.log("App Rendered");
+      if(this.props.MainStore.getPageOneStore().pageOneIsActive.get()){
+        return(
+          <PageOne/>
+        );
+      }
+      else if(this.props.MainStore.getPageTwoStore().pageTwoIsActive.get()){
+        return(
+          <PageTwo MainStore={this.props.MainStore}/>
+        );
+      }
+      else if(this.props.MainStore.getPageThreeStore().getPageThreeIsActive()){
+        return(
+          <PageThree MainStore={this.props.MainStore}/>
+        );
       }
       else{
         return(

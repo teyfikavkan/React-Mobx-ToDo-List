@@ -4,6 +4,6 @@ class PageThreeStore{
     @observable pageThreeIsActive = false;
 
     @action setPageThreeIsActive(isActive){ this.pageThreeIsActive = isActive;}
-    @action getPageThreeIsActive(){return this.pageThreeIsActive};
+    getPageThreeIsActive(){return this.pageThreeIsActive};
 };
 export default new PageThreeStore();

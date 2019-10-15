@@ -1,10 +1,14 @@
-import {action, observable } from "mobx";
+import {action,configure , observable } from "mobx";
 
-class PageThreeStore{
-    @observable pageOneIsActive = false;
+configure({enforceActions: true})
 
-    @action setPageOneIsActive(isActive){ this.pageOneIsActive = isActive;}
-    @action getPageOneIsActive(){return this.pageOneIsActive}
+class PageOneStore{
+    pageOneIsActive = observable.box(false);
+
+    //@action setPageOneIsActive(isActive){ this.pageOneIsActive = isActive;}
+    set pageOneIsActive(isActive){this._pageOneIsActive = isActive;}
+    //getPageOneIsActive(){return this.pageOneIsActive}
+    get pageOneIsActive(){return this._pageOneIsActive}
 };
 
-export default new PageThreeStore();
+export default new PageOneStore();

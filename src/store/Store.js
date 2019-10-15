@@ -1,20 +1,19 @@
-import {observable, computed, action } from "mobx";
+import {observable, configure, computed, action } from "mobx";
 import PageOneStore from './PageOneStore'
 import PageTwoStore from './PageTwoStore'
 import PageThreeStore from './PageThreeStore'
+
+//configure({enforceActions: true})
 
 class MainStore {
 
     @observable pageOneStore = PageOneStore;
     @observable pageTwoStore = PageTwoStore;
     @observable pageThreeStore = PageThreeStore;
-    @observable isPageChanged = false;
     
-    @action setIsPageChanged(isPageChanged){this.isPageChanged = isPageChanged;}
-    @action isPageChange(){return this.isPageChanged;}
-    @action getPageOneStore(){return this.pageOneStore;}
-    @action getPageTwoStore(){return this.pageTwoStore;}
-    @action getPageThreeStore(){return this.pageThreeStore;}
+    getPageOneStore(){return this.pageOneStore;}
+    getPageTwoStore(){return this.pageTwoStore;}
+    getPageThreeStore(){return this.pageThreeStore;}
 }
 
 const store = new MainStore();

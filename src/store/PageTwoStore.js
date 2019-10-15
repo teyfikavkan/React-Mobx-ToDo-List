@@ -1,9 +1,9 @@
 import {action, observable } from "mobx";
 
-class PageThreeStore{
-    @observable pageTwoIsActive = false;
+class PageTwoStore{
+    pageTwoIsActive = observable.box(false);
 
     @action setPageTwoIsActive(isActive){ this.pageTwoIsActive = isActive;}
-    @action getPageTwoIsActive(){return this.pageTwoIsActive;}
+    getPageTwoIsActive(){return this.pageTwoIsActive;}
 };
-export default new PageThreeStore();
+export default new PageTwoStore();
