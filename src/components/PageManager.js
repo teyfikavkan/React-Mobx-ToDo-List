@@ -24,7 +24,11 @@ class PageManager extends Component{
     
     render(){
         return(
-            <div >
+            <div style={{display: 'flex',
+                        flexDirection: 'column',
+                        textAlign: 'center'
+                        }}>
+                <h1>Page Manager</h1>
                 <div><button onClick={() => this.changePageOneIsActive(true)}>PageOneSetActive</button></div>
                 <div><button onClick={() => this.changePageTwoIsActive(true)}>PageTwoSetActive</button></div>
                 <div><button onClick={() => this.changePageThreeIsActive(true)}>PageThreeSetActive</button></div>

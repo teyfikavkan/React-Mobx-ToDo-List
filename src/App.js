@@ -1,8 +1,8 @@
 import { inject, observer } from 'mobx-react';
 import React, { Component } from 'react';
-import PageOne from './components/PageOne'
-import PageTwo from './components/PageTwo'
-import PageThree from './components/PageThree'
+import PageOne from './components/PageOne/PageOne'
+import PageTwo from './components/PageTwo/PageTwo'
+import PageThree from './components/PageThree/PageThree'
 import PageManager from './components/PageManager'
 
 
@@ -17,7 +17,9 @@ class App extends Component {
       console.log("App Rendered");
       if(this.props.MainStore.getPageOneStore().pageOneIsActive.get()){
         return(
-          <PageOne/>
+          <div>
+            <PageOne/>
+          </div>
         );
       }
       else if(this.props.MainStore.getPageTwoStore().pageTwoIsActive.get()){
